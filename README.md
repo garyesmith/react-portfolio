@@ -4,6 +4,7 @@ A ReactJS app implementing a single-page portfolio website for showcasing catego
 
 Live Demo: [https://www.garysmith.ca/demos/react-portfolio/](https://www.garysmith.ca/demos/react-portfolio/)
 
+<a href="https://www.garysmith.ca/demos/react-portfolio/" target="_blank"><img src="https://www.garysmith.ca/assets/react-portfolio-screengrab.jpg" /></a>
 
 # Requirements
 
