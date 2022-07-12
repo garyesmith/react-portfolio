@@ -47,15 +47,17 @@ The file `/data/config.json` defines a single JSON object describing the overall
     "siteName": "React Portfolio",
     "siteDescription": "A project portfolio template built with React",
     "siteIntroduction": "<b>Welcome!</b> Here might be some text explaining who you are and what sorts of projects you are showcasing in this porfolio. Lorem ipsum dolor sit amet, lorem ipsum.",
-    "footerText": "Gary E. Smith."
+    "footerText": "Gary E. Smith.",
+    "showSourceCodeLink": true
 }
 ```
 
 The configuration object must specify:
-- A `siteName` string containing the name of the portfolio site
-- A `siteDescription` string containing a short descrption of the site
-- An optional `siteIntroduction` string of HTML to display above the main project index
-- An `footerText` string specifying text to display after the copyright year in the footer
+- A `siteName` string containing the name of the portfolio site.
+- A `siteDescription` string containing a short descrption of the site.
+- An optional `siteIntroduction` string of HTML to display above the main project index.
+- An `footerText` string specifying text to display after the copyright year in the footer.
+- A `showSourceCodeLink` boolean value specifying whether to display a link to this GitHub repo in the footer.
 
 ### Categories data
 
@@ -74,7 +76,7 @@ The file `/data/categories.json` defines an array of project category objects, w
 There may be any number of categories defined in the array. 
 
 For each category you must specify:
-- a unique `id` string
+- a unique `id` string.
 - a descriptive `name` string for the category, which will appear in the navbar and subheadings.
 - a URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens, which will appear in the URL hash.
 
@@ -98,10 +100,10 @@ The file `/data/projects.json` defines an array of project details, with each pr
 There may be any number of projects defined in the array. 
 
 For each project you must specify:
-- a unique `id` string
-- a descriptive `title` string
-- a URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens
-- a `category` that matches one `id` field in the `/data/categories.json` file, as described above
-- a `image` string that matches the name of a file in the `/src/images` folder
-- a `description` string that provides a short summary of the project
-- a `body` string containing HTML that describes the project in detail
+- a unique `id` string.
+- a descriptive `title` string.
+- a URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens.
+- a `category` that matches one `id` field in the `/data/categories.json` file, as described above.
+- a `image` string that matches the name of a file in the `/src/images` folder.
+- a `description` string that provides a short summary of the project.
+- a `body` string containing HTML that describes the project in detail.

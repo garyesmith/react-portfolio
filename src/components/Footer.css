@@ -24,12 +24,27 @@ footer > p {
 	padding: 0;
 	text-align: left;
 }
+footer p a.source-link {
+	display: block;
+	position: relative;
+	float: right;
+	text-decoration: none;
+}
+footer p a.source-link img {
+	display: inline-block;
+	height: 16px;
+	margin: 0 4px 0 0;
+	padding: 0;
+	vertical-align: bottom;
+	width: auto;
+}
 
 /* footer text */
 footer > p {
 	font-size: 14px;
 	color: #414141;
 }
+
 
 /* mobile style */
 @media screen and (max-width: 768px) {
