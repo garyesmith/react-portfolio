@@ -7,7 +7,7 @@ const Footer = (props) => {
 
     let sourceCodeLink='';
     if (props.showSourceCodeLink) {
-        sourceCodeLink=<Link className="source-link" to="https://github.com/garyesmith/react-portfolio" target="_blank"><img src={githubLogo} alt="GitHub logo" />View source</Link>
+        sourceCodeLink=<Link className="source-link" to={{ pathname: "https://github.com/garyesmith/react-portfolio" }} target="_blank"><img src={githubLogo} alt="GitHub logo" />View source</Link>
     }
     
     return (
