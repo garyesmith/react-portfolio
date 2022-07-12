@@ -1,6 +1,6 @@
 # A Portfolio Template in ReactJS
 
-A ReactJS app implementing a single-page portfolio website for showcasing categorized creative projects. Uses sample project and category metadata read dynamically from static JSON data files in lieu of API endpoints. Intended as a sample template to be further customized.
+A ReactJS app that implements a portfolio website displaying information about categorized creative projects. Intended as an base template for future customization.
 
 Live Demo: [https://www.garysmith.ca/demos/react-portfolio/](https://www.garysmith.ca/demos/react-portfolio/)
 
