@@ -1,6 +1,6 @@
 # A Portfolio Template in ReactJS
 
-A ReactJS app that implements a portfolio website displaying information about categorized creative projects. Intended as an base template for future customization.
+A ReactJS implementation of a single-page portfolio website for showcasing categorized creative projects. Intended as an base template for future adaptation.
 
 Live Demo: [https://www.garysmith.ca/demos/react-portfolio/](https://www.garysmith.ca/demos/react-portfolio/)
 
