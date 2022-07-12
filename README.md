@@ -76,9 +76,9 @@ The file `/data/categories.json` defines an array of project category objects, w
 There may be any number of categories defined in the array. 
 
 For each category you must specify:
-- a unique `id` string.
-- a descriptive `name` string for the category, which will appear in the navbar and subheadings.
-- a URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens, which will appear in the URL hash.
+- A unique `id` string.
+- A descriptive `name` string for the category, which will appear in the navbar and subheadings.
+- A URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens, which will appear in the URL hash.
 
 ### Projects data
 
@@ -100,10 +100,10 @@ The file `/data/projects.json` defines an array of project details, with each pr
 There may be any number of projects defined in the array. 
 
 For each project you must specify:
-- a unique `id` string.
-- a descriptive `title` string.
-- a URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens.
-- a `category` that matches one `id` field in the `/data/categories.json` file, as described above.
-- a `image` string that matches the name of a file in the `/src/images` folder.
-- a `description` string that provides a short summary of the project.
-- a `body` string containing HTML that describes the project in detail.
+- A unique `id` string.
+- A descriptive `title` string.
+- A URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens.
+- A `category` that matches one `id` field in the `/data/categories.json` file, as described above.
+- An `image` string that matches the name of an image file in the `/src/images` folder.
+- A `description` string that provides a short summary of the project.
+- A `body` string containing HTML that describes the project in detail.
