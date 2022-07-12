@@ -1,0 +1,76 @@
+/* Styles for overall site layout */
+body, html {
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	-webkit-scroll-behavior: smooth;
+}
+section {
+	display: block;
+	position: relative;	
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 20px 0 50px 0;
+	text-align: center;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-image: none;
+}
+section > article {
+	display: inline-block;
+	position: relative;
+	width: 96%;
+	max-width: 768px;
+	margin: 0 2%;
+	padding: 0;
+	text-align: left;
+}
+section.intro {
+	padding: 50px 0 0 0;
+	margin-bottom: -40px;
+}
+section.intro article h3 {
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 200;
+}
+
+/* lists */
+ul,
+ol {
+	padding-left: 15px;
+}
+ul li,
+ol li {
+	margin-bottom: 10px;
+}
+
+/* disable text selection highlighting where annoying (ex. in navbar links) */
+.unselectable {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+/* helper class to clear floats */
+.clear {
+	clear: both;
+}
+
+/* mobile-specific styles */
+@media screen and (max-width: 768px) {
+
+	section {
+		background-size: 240% auto;
+	}
+	section > article {
+		width: 94%;
+		margin: 0 3%;
+	}
+
+}

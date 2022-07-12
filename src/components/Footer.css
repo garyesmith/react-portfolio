@@ -1,0 +1,44 @@
+/* Styles for Footer component */
+
+footer {
+	display: block;
+	position: relative;	
+	width: 100%;
+	height: auto;
+    clear: both;
+	margin: 80px 0 10px 0;
+	padding: 40px 0;
+	text-align: center;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-image: none;
+}
+footer > p {
+	display: inline-block;
+	position: relative;
+	width: 96%;
+	max-width: 768px;
+	margin: 0 2%;
+	padding: 0;
+	text-align: left;
+}
+
+/* footer text */
+footer > p {
+	font-size: 14px;
+	color: #414141;
+}
+
+/* mobile style */
+@media screen and (max-width: 768px) {
+
+	footer {
+		background-size: 240% auto;
+	}
+	footer > p {
+		width: 94%;
+		margin: 0 3%;
+	}
+}

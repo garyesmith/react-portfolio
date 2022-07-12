@@ -1,0 +1,67 @@
+/* Styles for Project component */
+.category ul li.project {
+    width: 31.3%;
+    height: 320px;
+    padding: 0;
+    background-color: white;
+    margin: 10px 2% 10px 0;
+    display: block;
+    position: relative;
+    float: left;
+    border: 1px solid #96a0ad;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+.category ul li.project a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.category ul li.project img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 5px 0;
+    box-sizing: content-box;   
+}
+.category ul li.project div.project-meta {
+    width: 90%;
+    height: auto;
+    margin: 0 5% 5% 5%;
+    padding: 0;
+    clear: both;
+    float: none;
+}
+.category ul li.project div.project-meta h3 {
+    color:#28303d;
+    font-size: 24px;
+    line-height: 1.2em;
+    margin: 5px 0 10px 0;
+    padding: 0;
+}
+.category ul li.project div.project-meta p {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.2em;
+    margin: 5px 0 10px 0;
+    padding: 0;
+}
+
+/* tablet width */
+@media screen and (max-width: 1024px) {
+    .category ul li.project {
+        width: 48%;
+        height: 360px;
+    }
+}
+
+/* mobile width */
+@media screen and (max-width: 640px) {
+    section {
+        width: 92%;
+        margin-left: 2%;
+        margin-right: 6%;
+    }
+    .category ul li.project {
+        width: 100%;
+        height: auto
+    }
+}

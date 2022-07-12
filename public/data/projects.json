@@ -1,0 +1,84 @@
+[
+    {
+        "id": "1",
+        "title": "The First Project",
+        "tag": "my-first-project",
+        "category": "1",
+        "image": "project-programming-1.png",
+        "description": "This is the description of the first project.",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p><p>Ut labore et dolore magna aliqua. Dolor magna eget est lorem ipsum. Amet mattis vulputate enim nulla.</p><p>Fames ac turpis egestas maecenas. Vel fringilla est ullamcorper eget.</p><p>Pretium quam vulputate dignissim suspendisse in est. Eget est lorem ipsum dolor sit amet consectetur.</p>"
+    },
+    {
+        "id": "2",
+        "tag": "the-second-example-project",
+        "title": "The Second Example Project",
+        "category": "1",
+        "image": "project-programming-2.png",
+        "description": "Description of the second project. Lorem ipsum dolor sit amet.",
+        "body": "<p>Lorem ipsum dolor sit amet.</p><p>Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae. Nunc eget lorem dolor sed viverra ipsum nunc. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper.</p><p>Mattis enim ut tellus elementum sagittis vitae et leo duis.</p>"
+    },
+    {
+        "id": "3",
+        "title": "Project Number Three",
+        "tag": "project-number-three",
+        "category": "2",
+        "image": "project-art-1.png",
+        "description": "Here you will find a description for project number three.",
+        "body": "<p>Lorem ipsum dolor sit amet ultrices neque ornare aenean euismod elementum.</p><p>Nisi quis eleifend quam. Arcu risus quis varius quam quisque id diam. Placerat orci nulla pellentesque dignissim enim sit.</p><p>Mi quis hendrerit dolor magna eget est lorem ipsum. Dignissim enim sit amet venenatis. Consectetur a erat nam at lectus.</p><p>Sed sed risus pretium quam. Tristique senectus et netus et malesuada fames ac turpis. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Vel pretium lectus quam id leo in.</p>"
+    },
+    {
+        "id": "4",
+        "title": "Project Four",
+        "tag": "project-the-fourth",
+        "category": "3",
+        "image": "project-writing-1.png",
+        "description": "A description for the fourth sample project. Lorem ipsum dolor sit amet.",
+        "body": "<p>Lorem ipsum dolor sit amet.</p><p>Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae. Nunc eget lorem dolor sed viverra ipsum nunc. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper.</p><p>Mattis enim ut tellus elementum sagittis vitae et leo duis.</p>"
+    },
+    {
+        "id": "5",
+        "title": "Project #5",
+        "tag": "project-5",
+        "category": "1",
+        "image": "project-programming-3.png",
+        "description": "Lorem ipsum dolor sit amet. This is a placeholder description for the fifth sample project.",
+        "body": "<p>Lorem ipsum dolor sit amet ultrices neque ornare aenean euismod elementum.</p><p>Nisi quis eleifend quam. Arcu risus quis varius quam quisque id diam. Placerat orci nulla pellentesque dignissim enim sit.</p><p>Mi quis hendrerit dolor magna eget est lorem ipsum. Dignissim enim sit amet venenatis. Consectetur a erat nam at lectus.</p><p>Sed sed risus pretium quam. Tristique senectus et netus et malesuada fames ac turpis. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Vel pretium lectus quam id leo in.</p>"
+    },
+    {
+        "id": "6",
+        "title": "The Sixth Project",
+        "tag": "the-sixth-project",
+        "category": "1",
+        "image": "project-programming-2.png",
+        "description": "A description of the sixth sample project.",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p><p>Ut labore et dolore magna aliqua. Dolor magna eget est lorem ipsum. Amet mattis vulputate enim nulla.</p><p>Fames ac turpis egestas maecenas. Vel fringilla est ullamcorper eget.</p><p>Pretium quam vulputate dignissim suspendisse in est. Eget est lorem ipsum dolor sit amet consectetur.</p>"
+    },
+    {
+        "id": "7",
+        "title": "Project Number 7",
+        "tag": "project-number-7",
+        "category": "2",
+        "image": "project-art-2.png",
+        "description": "A description for the seventh sample project will be located in this space, this space you are looking at right now.",
+        "body": "<p>Lorem ipsum dolor sit amet.</p><p>Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae. Nunc eget lorem dolor sed viverra ipsum nunc. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper.</p><p>Mattis enim ut tellus elementum sagittis vitae et leo duis.</p>"
+ 
+    },
+    {
+        "id": "8",
+        "title": "Project Eight",
+        "tag": "project-eight",
+        "category": "3",
+        "image": "project-writing-2.png",
+        "description": "Project number eight is described here.",
+        "body": "<p>Lorem ipsum dolor sit amet ultrices neque ornare aenean euismod elementum.</p><p>Nisi quis eleifend quam. Arcu risus quis varius quam quisque id diam. Placerat orci nulla pellentesque dignissim enim sit.</p><p>Mi quis hendrerit dolor magna eget est lorem ipsum. Dignissim enim sit amet venenatis. Consectetur a erat nam at lectus.</p><p>Sed sed risus pretium quam. Tristique senectus et netus et malesuada fames ac turpis. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Vel pretium lectus quam id leo in.</p>"
+    },
+    {
+        "id": "9",
+        "title": "Project Nine",
+        "tag": "project-nine",
+        "category": "3",
+        "image": "project-writing-3.png",
+        "description": "Lorem ipsum! The ninth project is described here.",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p><p>Ut labore et dolore magna aliqua. Dolor magna eget est lorem ipsum. Amet mattis vulputate enim nulla.</p><p>Fames ac turpis egestas maecenas. Vel fringilla est ullamcorper eget.</p><p>Pretium quam vulputate dignissim suspendisse in est. Eget est lorem ipsum dolor sit amet consectetur.</p>"
+    }
+]

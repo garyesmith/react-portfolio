@@ -1,0 +1,17 @@
+/* Styles for ProjectDetails component */
+
+.project-details a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.project-details img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+.project-details p {
+    width: 100%;
+    max-width: 500px;
+}

@@ -1,0 +1,51 @@
+/* Styles for Header component */
+
+header {
+	display: block;
+	position: relative;	
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 40px 0;
+	text-align: center;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-image: none;
+}
+header > article {
+	display: inline-block;
+	position: relative;
+	width: 96%;
+	max-width: 768px;
+	margin: 0 2%;
+	padding: 0;
+	text-align: left;
+}
+
+/* main heading with logo */
+header h1 img#logo {
+	width: auto;
+	height: 45px;
+	max-width: 100px;
+	display: block;
+	position: relative;
+	float: left;
+	margin: 0 1% 0 0;
+	padding: 0;
+}
+
+/* mobile style */
+@media screen and (max-width: 768px) {
+
+	header {
+		background-size: 240% auto;
+		border-bottom: 2px solid #28303d;
+	}
+	header > article {
+		width: 94%;
+		margin: 0 3%;
+	}
+
+}

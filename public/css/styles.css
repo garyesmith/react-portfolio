@@ -1,0 +1,45 @@
+/* --customizable site styles */
+
+/* basic text  */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #ebebf0;
+}
+h1, h2, h3, p, li {
+	color: black;
+	line-height: 1.4em;
+}
+h1 {
+	font-weight: 600;
+	font-size: 32px;
+}
+h2 {
+	font-weight: 600;
+	font-size: 26px;
+}
+h3 {
+	font-weight: 600;
+	font-size: 22px;
+}
+p {
+	font-weight: 400;
+	font-size: 16px;
+}
+
+/* body links */
+a,
+p a,
+p a:visited {
+	color: #6c747f; /*  28303d; */
+	text-decoration: underline;
+}
+p a:hover,
+p a:active {
+	text-decoration: underline;	
+}
+
+/* columns minimum height */
+div.three-columns div {
+	min-height: 300px;
+}
+
