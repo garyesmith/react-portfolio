@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./ProjectCategory.css";
 import Project from "./Project";
 
@@ -25,4 +26,44 @@ const ProjectCategory = (props) => {
     )
 }
 
-export default React.memo(ProjectCategory);        
+ProjectCategory.propTypes = {
+    id: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    projects: PropTypes.arrayOf(PropTypes.shape({
+        "id": PropTypes.string.isRequired,
+        "title": PropTypes.string.isRequired,
+        "tag": PropTypes.string.isRequired,
+        "category": PropTypes.string.isRequired,
+        "image": PropTypes.string.isRequired,
+        "description": PropTypes.string.isRequired,
+        "body": PropTypes.string.isRequired
+    })).isRequired,
+    categories: PropTypes.arrayOf(PropTypes.shape({
+        "id": PropTypes.string.isRequired,
+        "name": PropTypes.string.isRequired,
+        "tag": PropTypes.string.isRequired
+    })).isRequired
+}
+
+ProjectCategory.defaultProps = {
+    id: "",
+    tag: "",
+    name: "",
+    projects: [{
+        "id": "",
+        "title": "",
+        "tag": "",
+        "category": "",
+        "image": "",
+        "description": "",
+        "body": ""
+    }],
+    categories: [{
+        "id": "",
+        "name": "",
+        "tag": ""
+    }]
+};
+
+export default ProjectCategory;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 import hamburger from '../images/menu.png';
 import { NavHashLink } from 'react-router-hash-link';
 import "./Navbar.css";
@@ -65,5 +66,19 @@ const Navbar = (props) => {
     )
 
 }
+
+Navbar.propTypes = {
+    categories: PropTypes.arrayOf(PropTypes.shape({
+        "id": PropTypes.string.isRequired,
+        "name": PropTypes.string.isRequired,
+        "tag": PropTypes.string.isRequired
+    })).isRequired
+};
+
+Navbar.defaultProps = {
+    "id": "",
+    "name": "",
+    "tag": ""
+};
 
 export default React.memo(Navbar);

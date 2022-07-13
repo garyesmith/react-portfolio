@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import githubLogo from '../images/github.png';
 import "./Footer.css";
 
@@ -18,5 +19,17 @@ const Footer = (props) => {
         </>
     )
 }
+
+Footer.propTypes = {
+    currYear: PropTypes.number.isRequired,
+    footerText: PropTypes.string.isRequired,
+    showSourceCodeLink: PropTypes.bool.isRequired
+};
+
+Footer.defaultProps = {
+    currYear: 2022,
+    footerText: "",
+    showSourceCodeLink: true
+};
 
 export default React.memo(Footer);

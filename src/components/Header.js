@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./Header.css";
 import logo from '../images/logo.png';
 import background from '../images/header-bg.jpg';
@@ -15,5 +16,15 @@ const Header = (props) => {
         </>
     )
 }
+
+Header.propTypes = {
+    siteName: PropTypes.string.isRequired,
+    siteDescription: PropTypes.string.isRequired
+};
+
+Header.defaultProps = {
+    siteName: "",
+    siteDescription: ""
+};
 
 export default React.memo(Header);

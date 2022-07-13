@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { Interweave } from 'interweave';
 
@@ -50,4 +51,40 @@ const ProjectDetails = (props) => {
 
 }
 
-export default React.memo(ProjectDetails);
+ProjectDetails.propTypes = {
+    key: PropTypes.string.isRequired,
+    categories: PropTypes.arrayOf(PropTypes.shape({
+        "id": PropTypes.string.isRequired,
+        "name": PropTypes.string.isRequired,
+        "tag": PropTypes.string.isRequired
+    })).isRequired,
+    details: PropTypes.shape({
+        "id": PropTypes.string.isRequired,
+        "title": PropTypes.string.isRequired,
+        "tag": PropTypes.string.isRequired,
+        "category": PropTypes.string.isRequired,
+        "image": PropTypes.string.isRequired,
+        "description": PropTypes.string.isRequired,
+        "body": PropTypes.string.isRequired
+    }).isRequired
+};
+
+ProjectDetails.defaultProps = {
+    key: "",
+    categories: [{
+        "id": "",
+        "name": "",
+        "tag": ""
+    }],
+    details: {
+        "id": "",
+        "title": "",
+        "tag": "",
+        "category": "",
+        "image": "",
+        "description": "",
+        "body": ""
+    }
+};
+
+export default ProjectDetails;
