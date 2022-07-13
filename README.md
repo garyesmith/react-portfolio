@@ -24,7 +24,7 @@ To run this application on your local command line for testing or development:
 3. `npm install`
 4. `npm start`
 
-Then visit `http://localhost:3000/demo/react-portfolio` in your browser (if it does not open automatically)
+Then visit `http://localhost:3000/demos/react-portfolio` in your browser (if it does not open automatically)
 
 
 # Production deployment
