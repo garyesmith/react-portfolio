@@ -19,7 +19,7 @@ This project has been tested with the following stack:
 
 To run this application on your local command line for testing or development:
 
-1. `git clone https://github.com/garyesmith/react-porfolio.git`
+1. `git clone https://github.com/garyesmith/react-portfolio.git`
 2. `cd react-portfolio`
 3. `npm install`
 4. `npm start`
