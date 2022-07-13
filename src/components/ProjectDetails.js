@@ -10,24 +10,37 @@ const ProjectDetails = (props) => {
 
     let { tag } = useParams();
 
-    let thisProject={
+    let thisProject = {
         title: "",
         tag: "",
         image: "",
         description: ""
     };
 
+    let prevLinkUrl, nextLinkUrl="";
+    let prevLink, nextLink=<></>;
+
     // find details for requested project
     props.projects.forEach(function(project, i) {
         if (project.tag===tag) {
             thisProject=project;
+            if (i>0) {
+                prevLinkUrl='/project/'+props.projects[i-1].tag+window.location.hash;
+                prevLink=<Link to={prevLinkUrl} className="prev-link">&laquo; Previous</Link>
+            } else {
+                prevLink=<span className="link-placeholder">&nbsp;</span>;
+            }
+            if (i<props.projects.length-1) {
+                nextLinkUrl='/project/'+props.projects[i+1].tag+window.location.hash;
+                nextLink=<Link to={nextLinkUrl} className="next-link">Next &raquo;</Link>
+            }
             return false;
         }
     });   
 
-    let backLink='/';
+    let listLink='/';
     if (window.location.hash.length) {
-        backLink+=window.location.hash;
+        listLink+=window.location.hash;
     }
 
     // render image only if exists
@@ -40,10 +53,14 @@ const ProjectDetails = (props) => {
        <section>
         <article>
             <div className="project-details">
-                <h3>{thisProject.title}</h3>
                 {imageTag}
+                <h3>{thisProject.title}</h3>
                 <p><Interweave content={thisProject.body} /></p>
-                <Link to={backLink}>&laquo; Back</Link>
+                <div className="project-links">
+                    {prevLink}
+                    <Link to={listLink} className="list-link">List</Link>
+                    {nextLink}
+                </div>
             </div>
             </article>
        </section>

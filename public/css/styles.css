@@ -43,3 +43,22 @@ div.three-columns div {
 	min-height: 300px;
 }
 
+/* mobile-specific styles */
+@media screen and (max-width: 768px) {
+	h1, h2, h3, p, li {
+		color: black;
+		line-height: 1.3em;
+	}
+	h1 {
+		font-weight: 600;
+		font-size: 28px;
+	}
+	h2 {
+		font-weight: 600;
+		font-size: 18px;
+	}
+	h3 {
+		font-weight: 600;
+		font-size: 16px;
+	}
+}

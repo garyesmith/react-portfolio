@@ -6,12 +6,34 @@
 }
 .project-details img {
     width: 100%;
-    max-width: 500px;
     height: auto;
     margin: 0;
     padding: 0;
 }
 .project-details p {
     width: 100%;
-    max-width: 500px;
+}
+.project-details .project-links {
+    clear: both;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px 0;
+    border-top: 1px solid #e1e1e1;
+}
+.project-details .project-links a,
+.project-details .project-links span {
+    display: inline-block;
+    width: 33.3%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.project-details .project-links .prev-link {
+    text-align: left;   
+}
+.project-details .project-links .list-link {
+    text-align: center;   
+}
+.project-details .project-links .next-link {
+    text-align: right;   
 }
