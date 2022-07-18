@@ -29,12 +29,12 @@ nav#primary img.mobile-nav {
 
 /* primary nav bar */
 nav#primary {
-	background-color: #28303d;
+	background-color: black;
 	height: 32px;
 	overflow-y: hidden;
 	padding: 0;
-	border-top: 2px solid #28303d;
-	border-bottom: 2px solid #28303d;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
 	z-index: 1;
 }
 nav#primary.stuck {
@@ -53,13 +53,13 @@ nav#primary ul li {
 	margin: 0 5px 0 0;
 	padding: 0;
 	text-decoration: none;
-	color: #f1f1f1;
+	color: white;
 	text-decoration: center;
 }
 nav#primary ul li a,
 nav#primary ul li a:visited {
 	text-decoration: none;
-	color: #f1f1f1;
+	color: white;
 	height: 100%;
 	display: inline-block;
 	padding: 5px 10px;
@@ -68,29 +68,14 @@ nav#primary ul li a:visited {
 /* primary nav unselected links text color */
 nav#primary ul li a,
 nav#primary ul li a:visited {
-	color: #f1f1f1;
+	color: #white;
 }
-
 nav#primary ul li a.active {
-	background-color: #f1f1f1;
-	color: #28303d
+	background-color: white !important;
+	color: black
 }
-
-/* desktop-only styles */
-@media screen and (min-width: 769px) {
-		
-	/* primary nav selected link background color */
-	nav#primary ul li:hover {
-		background-color: #f1f1f1;
-	}
-	/* primary nav selected link text color */
-	nav#primary ul li:hover a,
-	nav#primary ul li:hover a.active,
-	nav#primary ul li:hover a:hover,
-	nav#primary ul li:hover a:active,
-	nav#primary ul li:hover a:visited {
-		color: #28303d;
-	}
+nav#primary ul a.active {
+	background-color: white;
 }
 
 /* mobile styles */
@@ -102,7 +87,8 @@ nav#primary ul li a.active {
 		width: 100%;
 		height: auto;
 		min-height: 40px;
-		background-color: transparent;
+		background-color: transparent !important;
+		border-color: transparent !important;
 		border: 0;
 	}
 	nav#primary img.mobile-nav {
@@ -110,7 +96,7 @@ nav#primary ul li a.active {
 		width: 30px;
 		height: auto;		
 		top: 15px;
-		right: 2.5%;
+		right: 3.5%;
 		padding: 5px;
 		display: block;
 		cursor: pointer;
@@ -121,12 +107,12 @@ nav#primary ul li a.active {
 	}
 	nav#primary > ul {
 		display: none;
-		width: 96%;
-		margin: -43px 1% 0 auto;
+		width: 95%;
+		margin: -43px 2% 0 2%;
 		top: 50px;
 		padding: 0;
-		border: 2px solid #28303d;
-		border-top: 40px solid #28303d;			
+		border: 2px solid black;
+		border-top: 40px solid black;			
 		height: auto;
 		overflow-y: visible;
 	
@@ -140,7 +126,7 @@ nav#primary ul li a.active {
 		padding: 0;
 		clear: both;
 		float: none;
-		background-color: #28303d;
+		background-color: black;
 	}
 	nav#primary > ul > li > a {
 		display: inline-block;

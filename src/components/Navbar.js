@@ -33,10 +33,10 @@ const Navbar = (props) => {
     }, []);
 
     return (
-        <nav id="primary">
+        <nav id="primary" style={{backgroundColor: props.navColor, borderColor: props.navColor}}>
             <img className="mobile-nav" onClick={toggleNav} src={hamburger} alt="Mobile Navigation" />
-            <ul className={navIsOpen ? "show" : "unselectable"}>
-            <li className="current">
+            <ul className={navIsOpen ? "show" : "unselectable"} style={{backgroundColor: props.navColor, borderColor: props.navColor}}>
+            <li className="current" style={{backgroundColor: props.navColor}}>
                 <NavHashLink 
                     to="/#" 
                     isActive={() => {
@@ -54,7 +54,8 @@ const Navbar = (props) => {
                         isActive={() => {
                             return window.location.hash === "#"+category.tag;
                         }} 
-                        onClick={() => {setNavIsOpen(false)}}
+                        onClick={() => {setNavIsOpen(false)}} 
+                        style={{backgroundColor: props.navColor}}
                     >
                         {category.name}
                     </NavHashLink>

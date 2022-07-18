@@ -64,7 +64,7 @@ function App() {
       <Switch>
         <Router basename={basename}>
           <Route exact path="/">
-            <Navbar categories={categories} />
+            <Navbar categories={categories} navColor={config.navBackgroundColor} />
             {introduction}
             <section className="categories">
               {categories.map((projectCategory) => (
@@ -73,7 +73,7 @@ function App() {
             </section>
           </Route>
           <Route path="/project/:tag">
-            <Navbar categories={categories} />
+            <Navbar categories={categories} navColor={config.navBackgroundColor} />
             <ProjectDetails projects={projects} />
           </Route>
         </Router>
