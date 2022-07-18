@@ -1,5 +1,8 @@
 /* Styles for ProjectDetails component */
 
+.project-details {
+    margin-top: 60px;
+}
 .project-details a {
     text-decoration: none;
     cursor: pointer;

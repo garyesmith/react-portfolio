@@ -65,7 +65,35 @@ nav#primary ul li a:visited {
 	padding: 5px 10px;
 }
 
-/* mobile style */
+/* primary nav unselected links text color */
+nav#primary ul li a,
+nav#primary ul li a:visited {
+	color: #f1f1f1;
+}
+
+nav#primary ul li a.active {
+	background-color: #f1f1f1;
+	color: #28303d
+}
+
+/* desktop-only styles */
+@media screen and (min-width: 769px) {
+		
+	/* primary nav selected link background color */
+	nav#primary ul li:hover {
+		background-color: #f1f1f1;
+	}
+	/* primary nav selected link text color */
+	nav#primary ul li:hover a,
+	nav#primary ul li:hover a.active,
+	nav#primary ul li:hover a:hover,
+	nav#primary ul li:hover a:active,
+	nav#primary ul li:hover a:visited {
+		color: #28303d;
+	}
+}
+
+/* mobile styles */
 @media screen and (max-width: 768px) {
 	nav#primary {
 		position: absolute;
@@ -87,16 +115,21 @@ nav#primary ul li a:visited {
 		display: block;
 		cursor: pointer;
 		z-index: 2;
+		background-color: white;
+		padding: 2px 4px;
+		text-align: center;	
 	}
 	nav#primary > ul {
 		display: none;
-		width: 94%;
-		margin: 0 3% 0 auto;
+		width: 96%;
+		margin: -43px 1% 0 auto;
 		top: 50px;
 		padding: 0;
-		border: 2px solid black;
+		border: 2px solid #28303d;
+		border-top: 40px solid #28303d;			
 		height: auto;
 		overflow-y: visible;
+	
 	}
 	nav#primary > ul.show {
 		display: block;
@@ -107,7 +140,7 @@ nav#primary ul li a:visited {
 		padding: 0;
 		clear: both;
 		float: none;
-		background-color: black;
+		background-color: #28303d;
 	}
 	nav#primary > ul > li > a {
 		display: inline-block;
@@ -116,29 +149,4 @@ nav#primary ul li a:visited {
 		margin: 0;
 
 	}	
-}
-
-/* primary nav unselected links text color */
-nav#primary ul li a,
-nav#primary ul li a:visited {
-	color: #f1f1f1;
-}
-
-/* primary nav selected link background color */
-nav#primary ul li:hover {
-	background-color: #f1f1f1;
-}
-
-nav#primary ul li a.active {
-	background-color: #f1f1f1;
-	color: black
-}
-
-/* primary nav selected link text color */
-nav#primary ul li:hover a,
-nav#primary ul li:hover a.active,
-nav#primary ul li:hover a:hover,
-nav#primary ul li:hover a:active,
-nav#primary ul li:hover a:visited {
-	color: black;
 }
