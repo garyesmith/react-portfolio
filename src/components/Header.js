@@ -9,7 +9,7 @@ const Header = (props) => {
         <>
             <header style={{ backgroundImage: `url(${background})` }}>
                 <article>
-                <h1><img id="logo" src={logo} alt="Logo" /> {props.siteName}</h1>
+                <h1><a href="/"><img id="logo" src={logo} alt="Logo" /></a> {props.siteName}</h1>
                 <h2>{props.siteDescription}</h2>
                 </article>
             </header>
