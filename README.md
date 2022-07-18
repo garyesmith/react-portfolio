@@ -6,7 +6,7 @@ Live Demo: [https://www.garysmith.ca/demos/react-portfolio/](https://www.garysmi
 
 <a href="https://www.garysmith.ca/demos/react-portfolio/" target="_blank"><img src="https://www.garysmith.ca/assets/react-portfolio-screengrab.jpg" /></a>
 
-# Requirements
+## Requirements
 
 This project has been tested with the following stack:
 
@@ -15,7 +15,7 @@ This project has been tested with the following stack:
 - npx 7.24.1
 
 
-# Development & Test environment
+## Development & Test environment
 
 To run this application on your local command line for testing or development:
 
@@ -27,7 +27,7 @@ To run this application on your local command line for testing or development:
 Then visit `http://localhost:3000/demos/react-portfolio` in your browser (if it does not open automatically)
 
 
-# Production deployment
+## Production deployment
 
 1. Edit `package.json` and set the `homepage` value to be the path where you will host the app inside your webserver docroot.
 2. Run `npm run build` on the command line from inside the project folder.
@@ -35,11 +35,11 @@ Then visit `http://localhost:3000/demos/react-portfolio` in your browser (if it 
 4. In a browser, open the URL that corresponds to the location where you have deployed the app.
 
 
-# Content customization
+## Content customization
 
 The sample demo reads configuration values, categories and project details from static JSON files included with this repository. On a production site, it should be straightforward to change the fetch calls in `App.js` to instead read data from API endpoints that return JSON in the correct format.
 
-### Config data
+#### Config data
 
 The file `/data/config.json` defines a single JSON object describing the overall configuration of the app, as in the following example:
 ```
@@ -59,7 +59,7 @@ The configuration object must specify:
 - An `footerText` string specifying text to display after the copyright year in the footer.
 - A `showSourceCodeLink` boolean value specifying whether to display a link to this GitHub repo in the footer.
 
-### Categories data
+#### Categories data
 
 The file `/data/categories.json` defines an array of project category objects, with each category containing values defined as in the following example:
 
@@ -80,7 +80,7 @@ For each category you must specify:
 - A descriptive `name` string for the category, which will appear in the navbar and subheadings.
 - A URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens, which will appear in the URL hash.
 
-### Projects data
+#### Projects data
 
 The file `/data/projects.json` defines an array of project details, with each project containing values defined as in the following example:
 
@@ -106,4 +106,23 @@ For each project you must specify:
 - A `category` that matches one `id` field in the `/data/categories.json` file, as described above.
 - An `image` string that matches the name of an image file in the `/src/images` folder.
 - A `description` string that provides a short summary of the project.
+- A `navBackgroundColor` string that specifies the background color to use for navbar elements. This value should be a valid color definition in CSS, ex. `#4444aa` or `blue`.
 - A `body` string containing HTML that describes the project in detail.
+
+## Implementation
+
+The site is implemented as a standard ReactJS application with seven components.
+
+- *App*
+
+- *Footer*
+
+- *Header*
+
+- *Navbar*
+
+- *ProjectCategory*
+
+- *Project*
+
+- *ProjectDetails*
