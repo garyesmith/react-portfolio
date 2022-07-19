@@ -113,17 +113,17 @@ For each project you must specify:
 
 ## Implementation
 
-The site is implemented as a standard ReactJS application with seven components. The *App* component files are located in the document root; all the other component files are located within the `/components` subfolder.
+The site is implemented as a standard ReactJS application with seven functional components. The *App* component files are located in the document root; all the other component files are located within the `/components` subfolder.
 
 ### App component
 
 This component is at the top-level of the component hierarchy and is the parent of all other components in this app. It handles the following tasks:
 
-- Reads and passes static data from the `config.json`, `projects.json` and `categories.json` data files discussed in the *Config data* section, above.
+- On initial mounting, this component uses the Effect Hook to read static data from the `config.json`, `projects.json` and `categories.json` data files discussed in the *Config data* section, above.
 
-- Defines two routes using the [BrowserRouter library](https://v5.reactrouter.com/web/api/BrowserRouter) to output different content for the site index page (the `/` route) and the project detail pages (the `/project/:tag` route).
+- Using the [BrowserRouter library](https://v5.reactrouter.com/web/api/BrowserRouter), this component defines two routes to output different content for the site index view (via the `/` route) and the project detail view (via the `/project/:tag` route).
 
-- Returns JSX to initiate rendering of all children elements, including the header, navbar, body content, and footer, depending on the route.
+- Depending on the route, this component returns JSX to initiate rendering of all children elements, including the header, navbar, body content, and footer.
 
 ### Footer component
 
