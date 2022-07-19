@@ -1,5 +1,14 @@
 /* Styles for Navbar component */
 
+/* ----customize navbar colors --- */
+
+$navBackgroundColor: #28303d;
+$navTextColor: #f1f1f1;
+$navSelectedBackgroundColor: #f1f1f1;
+$navSelectedTextColor: #28303d;
+
+/* ------------------------------- */
+
 nav#primary {
     display: block;
 	position: relative;	
@@ -29,12 +38,12 @@ nav#primary img.mobile-nav {
 
 /* primary nav bar */
 nav#primary {
-	background-color: black;
+	background-color: $navBackgroundColor;
 	height: 32px;
 	overflow-y: hidden;
 	padding: 0;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
+	border-top: 2px solid $navBackgroundColor;
+	border-bottom: 2px solid $navBackgroundColor;
 	z-index: 1;
 }
 nav#primary.stuck {
@@ -53,13 +62,13 @@ nav#primary ul li {
 	margin: 0 5px 0 0;
 	padding: 0;
 	text-decoration: none;
-	color: white;
+	color: $navTextColor;
 	text-decoration: center;
 }
 nav#primary ul li a,
 nav#primary ul li a:visited {
 	text-decoration: none;
-	color: white;
+	color: $navTextColor;
 	height: 100%;
 	display: inline-block;
 	padding: 5px 10px;
@@ -68,14 +77,14 @@ nav#primary ul li a:visited {
 /* primary nav unselected links text color */
 nav#primary ul li a,
 nav#primary ul li a:visited {
-	color: #white;
+	color: $navTextColor;
 }
 nav#primary ul li a.active {
-	background-color: white !important;
-	color: black
+	background-color: $navSelectedBackgroundColor;
+	color: $navSelectedTextColor;
 }
 nav#primary ul a.active {
-	background-color: white;
+	background-color: $navSelectedBackgroundColor;
 }
 
 /* mobile styles */
@@ -111,8 +120,8 @@ nav#primary ul a.active {
 		margin: -43px 2% 0 2%;
 		top: 50px;
 		padding: 0;
-		border: 2px solid black;
-		border-top: 40px solid black;			
+		border: 2px solid $navBackgroundColor;
+		border-top: 40px solid $navBackgroundColor;			
 		height: auto;
 		overflow-y: visible;
 	
@@ -126,7 +135,7 @@ nav#primary ul a.active {
 		padding: 0;
 		clear: both;
 		float: none;
-		background-color: black;
+		background-color: $navBackgroundColor;
 	}
 	nav#primary > ul > li > a {
 		display: inline-block;

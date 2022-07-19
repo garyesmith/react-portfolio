@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import hamburger from '../images/menu.png';
 import { NavHashLink } from 'react-router-hash-link';
-import "./Navbar.css";
+import "./Navbar.scss";
 
 const Navbar = (props) => {
 
@@ -33,9 +33,9 @@ const Navbar = (props) => {
     }, []);
 
     return (
-        <nav id="primary" style={{backgroundColor: props.navColor, borderColor: props.navColor}}>
+        <nav id="primary">
             <img className="mobile-nav" onClick={toggleNav} src={hamburger} alt="Mobile Navigation" />
-            <ul className={navIsOpen ? "show" : "unselectable"} style={{backgroundColor: props.navColor}}>
+            <ul className={navIsOpen ? "show" : "unselectable"}>
             <li className="current">
                 <NavHashLink 
                     to="/#" 
@@ -54,8 +54,7 @@ const Navbar = (props) => {
                         isActive={() => {
                             return window.location.hash === "#"+category.tag;
                         }} 
-                        onClick={() => {setNavIsOpen(false)}} 
-                        style={{backgroundColor: props.navColor}}
+                        onClick={() => {setNavIsOpen(false)}}
                     >
                         {category.name}
                     </NavHashLink>
@@ -73,8 +72,7 @@ Navbar.propTypes = {
         "id": PropTypes.string.isRequired,
         "name": PropTypes.string.isRequired,
         "tag": PropTypes.string.isRequired
-    })).isRequired,
-    navColor: PropTypes.string
+    })).isRequired
 };
 
 Navbar.defaultProps = {
@@ -82,8 +80,7 @@ Navbar.defaultProps = {
         "id": "",
         "name": "",
         "tag": ""
-    }],
-    navColor: "black"
+    }]
 }
 
 export default React.memo(Navbar);

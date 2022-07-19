@@ -6,7 +6,7 @@ Live Demo: [https://www.garysmith.ca/demos/react-portfolio/](https://www.garysmi
 
 <a href="https://www.garysmith.ca/demos/react-portfolio/" target="_blank"><img src="https://www.garysmith.ca/assets/react-portfolio-screengrab.jpg" /></a>
 
-## Requirements
+## 1.0 Requirements
 
 This project has been tested with the following stack:
 
@@ -15,7 +15,7 @@ This project has been tested with the following stack:
 - npx 7.24.1
 
 
-## Development environment
+## 2.0 Development environment
 
 With the above dependencies install, you can run this application on your local command line for testing or development as follows:
 
@@ -27,7 +27,7 @@ With the above dependencies install, you can run this application on your local 
 Then visit `http://localhost:3000/demos/react-portfolio` in your browser (if it does not open automatically)
 
 
-## Production deployment
+## 3.0 Production deployment
 
 1. Edit `package.json` and set the `homepage` value to be the path where you will host the app inside your webserver docroot.
 2. Run `npm run build` on the command line from inside the project folder.
@@ -35,13 +35,20 @@ Then visit `http://localhost:3000/demos/react-portfolio` in your browser (if it 
 4. In a browser, open the URL that corresponds to the location where you have deployed the app.
 
 
-## Content customization
+## 4.0 Content customization
 
 The sample demo reads configuration values, categories and project details from static JSON files included with this repository. On a production site, it should be straightforward to change the fetch calls in `App.js` to instead read data from API endpoints that return JSON in the correct format.
 
 To change the logo image displayed in the header, replace the default image at `/src/images/logo.png` with your preferred image.
 
-#### Config data
+Colors used for the navigation bar can be customized by assigning valid color values to these SCSS variables defined at the top of the `/components/Navbar.scss` file:
+
+- **$navBackgroundColor**  - The default background color the navbar.
+- **$navTextColor**  - The default text color for the navbar links.
+- **$navSelectedBackgroundColor** - The background color for the currently active navbar link.
+- **$navSelectedTextColor** - The text color for the currently actively navbar link.
+
+#### 4.1 Config data
 
 The file `/data/config.json` defines a single JSON object describing the overall configuration of the app, as in the following example:
 ```
@@ -61,7 +68,7 @@ The configuration object must specify:
 - An `footerText` string specifying text to display after the copyright year in the footer.
 - A `showSourceCodeLink` boolean value specifying whether to display a link to this GitHub repo in the footer.
 
-#### Categories data
+#### 4.2 Categories data
 
 The file `/data/categories.json` defines an array of project category objects, with each category containing values defined as in the following example:
 
@@ -82,7 +89,7 @@ For each category you must specify:
 - A descriptive `name` string for the category, which will appear in the navbar and subheadings.
 - A URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens, which will appear in the URL hash.
 
-#### Projects data
+#### 4.3 Projects data
 
 The file `/data/projects.json` defines an array of project details, with each project containing values defined as in the following example:
 
@@ -111,11 +118,11 @@ For each project you must specify:
 - A `navBackgroundColor` string that specifies the background color to use for navbar elements. This value should be a valid color definition in CSS, ex. `#4444aa` or `blue`.
 - A `body` string containing HTML that describes the project in detail.
 
-## Implementation
+## 5.0 Implementation
 
 The site is implemented as a standard ReactJS application with seven functional components. The *App* component files are located in the document root; all the other component files are located within the `/components` subfolder.
 
-### App component
+### 5.1 App component
 
 This component is at the top-level of the component hierarchy and is the parent of all other components in this app. It handles the following tasks:
 
@@ -125,23 +132,26 @@ This component is at the top-level of the component hierarchy and is the parent 
 
 - Depending on the route, this component returns JSX to initiate rendering of all children elements, including the header, navbar, body content, and footer.
 
-### Footer component
+### 5.2 Footer component
 
 Returns JSX to display the footer, populating it with the current year, as well at the `footerText` value defined in `config.json`. 
 
 If the `showSourceCodeLink` in `config.json` is set to `true`, an HTML link to this repository is also included.
 
-### Header component
+### 5.3 Header component
 
 Returns JSX to display the header, populating it with the `siteName` and `siteDescription` values defined in `config.json`.
 
-### Navbar component
+### 5.4 Navbar component
 
-Returns JSX to display the site navigation bar, populating it with category names defined in `categories.json` and setting the background color to `navColor` as defined in `config.json`.
+Returns JSX to display the site navigation bar, populating it with category names defined in `categories.json`.
+
+Note that this component uses SASS to easily allow the colors of the navbar to be customized (see section 4.0 above for details.)
+
 
 The navigation links render as URL hashes, and the component automatically scrolls the browser window to the selected subheading.
 
-### ProjectCategory component
+### 5.5 ProjectCategory component
 
 Returns JSX to display any number of related project summary boxes beneath a category subheading.
 
@@ -149,10 +159,10 @@ The parent *App* component maps through the categories and outputs instances of 
 
 The `ProjectCategory` component outputs the correct category heading, and then loops to return instances of the `Project` component for all projects in that category.
 
-### Project component
+### 5.6 Project component
 
 Returns JSX to display an summary box for a single project. The summary box outputs the project's `image`, `title` and `description` and links to the `ProjectDetails` component.
 
-### ProjectDetails component
+### 5.7 ProjectDetails component
 
 Returns JSX to display the full details of a single project, as defined in the `projects.json` configuration file. The *BrowserRouter* route defined in the *App* component displays this component under its own URL path, uniquely identifying it by the project's `tag` property. The component then outputs the `image`, `title`, and `body` of the project.
