@@ -4,7 +4,7 @@ A ReactJS implementation of a single-page portfolio website for showcasing categ
 
 Live Demo: [https://www.garysmith.ca/demos/react-portfolio/](https://www.garysmith.ca/demos/react-portfolio/)
 
-<a href="https://www.garysmith.ca/demos/react-portfolio/" target="_blank"><img src="https://www.garysmith.ca/assets/react-portfolio-screengrab.jpg" /></a>
+<a href="https://www.garysmith.ca/demos/react-portfolio/" target="_blank"><img src="https://garysmith.ca/demos/demo-react-portfolio-screengrab.jpg" /></a>
 
 ## 1.0 Requirements
 
