@@ -127,23 +127,23 @@ This component is at the top-level of the component hierarchy and is the parent 
 
 ### Footer component
 
-Returns JSX to define HTML for the footer, populating it with the current year and the `footerText` value defined in `config.json`. 
+Returns JSX to display the footer, populating it with the current year, as well at the `footerText` value defined in `config.json`. 
 
 If the `showSourceCodeLink` in `config.json` is set to `true`, an HTML link to this repository is also included.
 
 ### Header component
 
-Returns JSX to define HTML for the header, populating it with the `siteName` and `siteDescription` values defined in `config.json`.
+Returns JSX to display the header, populating it with the `siteName` and `siteDescription` values defined in `config.json`.
 
 ### Navbar component
 
-Returns JSX to define HTML for the site navigation bar, populating it with category names defined in `categories.json` and setting the background color to `navColor` as defined in `config.json`.
+Returns JSX to display the site navigation bar, populating it with category names defined in `categories.json` and setting the background color to `navColor` as defined in `config.json`.
 
 The navigation links render as URL hashes, and the component automatically scrolls the browser window to the selected subheading.
 
 ### ProjectCategory component
 
-Returns JSX to define HTML to display related project summaries beneath a category subheading.
+Returns JSX to display any number of related project summary boxes beneath a category subheading.
 
 The parent *App* component maps through the categories and outputs instances of the *ProjectCategory* component by passing the category's `id`, `tag` and `name`, along with the projects and categories defined in the configuration files.
 
@@ -151,8 +151,8 @@ The `ProjectCategory` component outputs the correct category heading, and then l
 
 ### Project component
 
-Returns JSX to define HTML to display an summary box for a single project. The summary box outputs the project's `image`, `title` and `description` and links to the `ProjectDetails` component.
+Returns JSX to display an summary box for a single project. The summary box outputs the project's `image`, `title` and `description` and links to the `ProjectDetails` component.
 
 ### ProjectDetails component
 
-Returns JSX to define HTML to display the full details of a single project, as defined in the `projects.json` configuration file. The *BrowserRouter* route defined in the *App* component displays this component under its own URL path, uniquely identifying it by the project's `tag` property. The component then outputs the `image`, `title`, and `body` of the project.
+Returns JSX to display the full details of a single project, as defined in the `projects.json` configuration file. The *BrowserRouter* route defined in the *App* component displays this component under its own URL path, uniquely identifying it by the project's `tag` property. The component then outputs the `image`, `title`, and `body` of the project.
