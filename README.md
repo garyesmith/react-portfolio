@@ -15,9 +15,9 @@ This project has been tested with the following stack:
 - npx 7.24.1
 
 
-## Development & Test environment
+## Development environment
 
-To run this application on your local command line for testing or development:
+With the above dependencies install, you can run this application on your local command line for testing or development as follows:
 
 1. `git clone https://github.com/garyesmith/react-portfolio.git`
 2. `cd react-portfolio`
@@ -38,6 +38,8 @@ Then visit `http://localhost:3000/demos/react-portfolio` in your browser (if it 
 ## Content customization
 
 The sample demo reads configuration values, categories and project details from static JSON files included with this repository. On a production site, it should be straightforward to change the fetch calls in `App.js` to instead read data from API endpoints that return JSON in the correct format.
+
+To change the logo image displayed in the header, replace the default image at `/src/images/logo.png` with your preferred image.
 
 #### Config data
 
@@ -111,18 +113,46 @@ For each project you must specify:
 
 ## Implementation
 
-The site is implemented as a standard ReactJS application with seven components.
+The site is implemented as a standard ReactJS application with seven components. The *App* component files are located in the document root; all the other component files are located within the `/components` subfolder.
 
-- *App*
+### App
 
-- *Footer*
+This component is at the top-level of the component hierarchy and is the parent of all other components in this app. It handles the following tasks:
 
-- *Header*
+- Reads and passes static data from the `config.json`, `projects.json` and `categories.json` data files discussed in the *Config data* section, above.
 
-- *Navbar*
+- Defines two routes using the [BrowserRouter library](https://v5.reactrouter.com/web/api/BrowserRouter) to output different content for the site index page (the `/` route) and the project detail pages (the `/project/:tag` route).
 
-- *ProjectCategory*
+- Returns JSX to initiate rendering of all children elements, including the header, navbar, body content, and footer, depending on the route.
 
-- *Project*
+### Footer
 
-- *ProjectDetails*
+Returns JSX to define HTML for the footer, populating it with the current year and the `footerText` value defined in `config.json`. 
+
+If the `showSourceCodeLink` in `config.json` is set to `true`, an HTML link to this repository is also included.
+
+### Header
+
+Returns JSX to define HTML for the header, populating it with the `siteName` and `siteDescription` values defined in `config.json`.
+
+### Navbar
+
+Returns JSX to define HTML for the site navigation bar, populating it with category names defined in `categories.json` and setting the background color to `navColor` as defined in `config.json`.
+
+The navigation links render as URL hashes, and the component automatically scrolls the browser window to the selected subheading.
+
+### ProjectCategory
+
+Returns JSX to define HTML to display related project summaries beneath a category subheading.
+
+The parent *App* component maps through the categories and outputs instances of the *ProjectCategory* component by passing the category's `id`, `tag` and `name`, along with the projects and categories defined in the configuration files.
+
+The `ProjectCategory` component outputs the correct category heading, and then loops to return instances of the `Project` component for all projects in that category.
+
+### Project
+
+Returns JSX to define HTML to display an summary box for a single project. The summary box outputs the project's `image`, `title` and `description` and links to the `ProjectDetails` component.
+
+### ProjectDetails
+
+Returns JSX to define HTML to display the full details of a single project, as defined in the `projects.json` configuration file. The *BrowserRouter* route defined in the *App* component displays this component under its own URL path, uniquely identifying it by the project's `tag` property. The component then outputs the `image`, `title`, and `body` of the project.

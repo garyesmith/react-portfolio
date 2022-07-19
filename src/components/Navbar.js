@@ -35,8 +35,8 @@ const Navbar = (props) => {
     return (
         <nav id="primary" style={{backgroundColor: props.navColor, borderColor: props.navColor}}>
             <img className="mobile-nav" onClick={toggleNav} src={hamburger} alt="Mobile Navigation" />
-            <ul className={navIsOpen ? "show" : "unselectable"} style={{backgroundColor: props.navColor, borderColor: props.navColor}}>
-            <li className="current" style={{backgroundColor: props.navColor}}>
+            <ul className={navIsOpen ? "show" : "unselectable"} style={{backgroundColor: props.navColor}}>
+            <li className="current">
                 <NavHashLink 
                     to="/#" 
                     isActive={() => {
@@ -73,13 +73,17 @@ Navbar.propTypes = {
         "id": PropTypes.string.isRequired,
         "name": PropTypes.string.isRequired,
         "tag": PropTypes.string.isRequired
-    })).isRequired
+    })).isRequired,
+    navColor: PropTypes.string
 };
 
 Navbar.defaultProps = {
-    "id": "",
-    "name": "",
-    "tag": ""
-};
+    categories: [{
+        "id": "",
+        "name": "",
+        "tag": ""
+    }],
+    navColor: "black"
+}
 
 export default React.memo(Navbar);
