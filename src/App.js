@@ -4,6 +4,8 @@ import { Interweave } from 'interweave';
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import LoginButton from "./components/admin/LoginButton";
+import AdminContainer from "./components/admin/AdminContainer";
 import ProjectCategory from "./components/ProjectCategory";
 import ProjectDetails from "./components/ProjectDetails";
 import './App.css';
@@ -75,6 +77,10 @@ function App() {
           <Route path="/project/:tag">
             <Navbar categories={categories} />
             <ProjectDetails projects={projects} />
+          </Route>
+          <Route path="/admin">
+            <LoginButton></LoginButton>
+            <AdminContainer></AdminContainer>
           </Route>
         </Router>
       </Switch>

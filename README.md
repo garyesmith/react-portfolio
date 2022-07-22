@@ -35,7 +35,36 @@ Then visit `http://localhost:3000/demos/react-portfolio` in your browser (if it 
 4. In a browser, open the URL that corresponds to the location where you have deployed the app.
 
 
-## 4.0 Content customization
+## 4.0 Auth0 configuration (optional)
+
+This application includes a placeholder administration route at `/admin`, intended to eventually house tools for creating, editing, and deleting content on the portfolio.
+
+Access to this route is protected by [Auth0](https://auth0.com/) authentication. To make this route available, you will need to perform the following configuration:
+
+**On the Auth0 website:**
+- Register a free account at [Auth0](https://auth0.com/).
+- Create an application: choose type *Single Page Web Application* and then *React*.
+- Under *Settings* for your application, copy/obtain the *Domain* and *Client ID* values for use below.
+- Enter your domain and/or server paths into the *Allowed Callback URLs*, *Allowed Logout URLs*, and *Allowed Web Origins* boxes. Comma-separate multiple domain paths as necessary. Be sure to include the */admin* route as one of the allowed callbacks.
+- Scroll to the bottom of the form and click the `Save Changes` button.
+
+**On your server:**
+- Create an `.env` file in the root of your application by copying the provided `.env-sample` file:
+
+  `mv .env-sample .env`
+
+- Edit the `.env` file and paste the *Domain* and *Client ID* values obtained in the Auth0 application form as `REACT_APP_AUTH0_DOMAIN` and `REACT_APP_AUTH0_CLIENT_ID` respectively; then save the file.
+- Restart your application with `npm start` to ensure the `.env` changes are applied to the build.
+- Open the Portfolio app in a browser, add `/admin` to the end of the URL, and confirm you can log in. If you receive errors, double check that you have the correct *Allowed* URLs in the Auth0 app as described in the previous section.
+
+**Restricting access**
+
+By default, Auth0 will permit anyone with a valid social media account to login and register. Since this is restricted control panel, this is not desired. You can refer to the Auth0 documentation to consider various ways to restrict access, such as using an invite-only system, or restricting signups using rules or actions.
+
+One quick way to restrict access to a small number of known email addresses is to create aRules inside the Auth0 control panel under *Auth Pipeline* > *Rules*, [as described here](https://auth0.com/rules/simple-user-whitelist).
+
+
+## 5.0 Content customization
 
 The sample demo reads configuration values, categories and project details from static JSON files included with this repository. On a production site, it should be straightforward to change the fetch calls in `App.js` to instead read data from API endpoints that return JSON in the correct format.
 
@@ -48,7 +77,7 @@ Colors used for the navigation bar can be customized by assigning valid color va
 - **$navSelectedBackgroundColor** - The background color for the currently active navbar link.
 - **$navSelectedTextColor** - The text color for the currently actively navbar link.
 
-#### 4.1 Config data
+#### 5.1 Config data
 
 The file `/data/config.json` defines a single JSON object describing the overall configuration of the app, as in the following example:
 ```
@@ -68,7 +97,7 @@ The configuration object must specify:
 - An `footerText` string specifying text to display after the copyright year in the footer.
 - A `showSourceCodeLink` boolean value specifying whether to display a link to this GitHub repo in the footer.
 
-#### 4.2 Categories data
+#### 5.2 Categories data
 
 The file `/data/categories.json` defines an array of project category objects, with each category containing values defined as in the following example:
 
@@ -89,7 +118,7 @@ For each category you must specify:
 - A descriptive `name` string for the category, which will appear in the navbar and subheadings.
 - A URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens, which will appear in the URL hash.
 
-#### 4.3 Projects data
+#### 5.3 Projects data
 
 The file `/data/projects.json` defines an array of project details, with each project containing values defined as in the following example:
 
@@ -118,11 +147,11 @@ For each project you must specify:
 - A `navBackgroundColor` string that specifies the background color to use for navbar elements. This value should be a valid color definition in CSS, ex. `#4444aa` or `blue`.
 - A `body` string containing HTML that describes the project in detail.
 
-## 5.0 Implementation
+## 6.0 Implementation
 
 The site is implemented as a standard ReactJS application with seven functional components. The *App* component files are located in the document root; all the other component files are located within the `/components` subfolder.
 
-### 5.1 App component
+### 6.1 App component
 
 This component is at the top-level of the component hierarchy and is the parent of all other components in this app. It handles the following tasks:
 
@@ -132,17 +161,17 @@ This component is at the top-level of the component hierarchy and is the parent 
 
 - Depending on the route, this component returns JSX to initiate rendering of all children elements, including the header, navbar, body content, and footer.
 
-### 5.2 Footer component
+### 6.2 Footer component
 
 Returns JSX to display the footer, populating it with the current year, as well at the `footerText` value defined in `config.json`. 
 
 If the `showSourceCodeLink` in `config.json` is set to `true`, an HTML link to this repository is also included.
 
-### 5.3 Header component
+### 6.3 Header component
 
 Returns JSX to display the header, populating it with the `siteName` and `siteDescription` values defined in `config.json`.
 
-### 5.4 Navbar component
+### 6.4 Navbar component
 
 Returns JSX to display the site navigation bar, populating it with category names defined in `categories.json`.
 
@@ -151,7 +180,7 @@ Note that this component uses SASS to easily allow the colors of the navbar to b
 
 The navigation links render as URL hashes, and the component automatically scrolls the browser window to the selected subheading.
 
-### 5.5 ProjectCategory component
+### 6.5 ProjectCategory component
 
 Returns JSX to display any number of related project summary boxes beneath a category subheading.
 
@@ -159,10 +188,10 @@ The parent *App* component maps through the categories and outputs instances of 
 
 The `ProjectCategory` component outputs the correct category heading, and then loops to return instances of the `Project` component for all projects in that category.
 
-### 5.6 Project component
+### 6.6 Project component
 
 Returns JSX to display an summary box for a single project. The summary box outputs the project's `image`, `title` and `description` and links to the `ProjectDetails` component.
 
-### 5.7 ProjectDetails component
+### 6.7 ProjectDetails component
 
 Returns JSX to display the full details of a single project, as defined in the `projects.json` configuration file. The *BrowserRouter* route defined in the *App* component displays this component under its own URL path, uniquely identifying it by the project's `tag` property. The component then outputs the `image`, `title`, and `body` of the project.

@@ -1,0 +1,28 @@
+/* Styles for LoginButton component */
+
+.login-box {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    padding: 2%;
+    margin: 0;
+    border: 1px solid #a1a1a1;
+}
+.login-box button {
+    padding: 5px 10px;
+    margin: 0 10px 0 0;
+    background-color: #a1a1a1;
+    color: black;
+    border: 1px solid #414141;
+    border-radius: 0;
+    box-shadow: 0;
+    cursor: pointer
+}
+.login-box p.error {
+    color: #cc0000;
+    font-weight: 600;
+    clear: both;
+    float: none;
+    margin: 10px 0;
+    padding: 0;
+}

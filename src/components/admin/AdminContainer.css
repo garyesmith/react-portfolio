@@ -1,0 +1,12 @@
+/* Styles for AdminContainer component */
+
+ button {
+    padding: 5px 10px;
+    margin: 0 10px 0 0;
+    background-color: #a1a1a1;
+    color: black;
+    border: 1px solid #414141;
+    border-radius: 0;
+    box-shadow: 0;
+    cursor: pointer
+}
