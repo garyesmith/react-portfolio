@@ -198,7 +198,7 @@ Returns JSX to display the full details of a single project, as defined in the `
 
 ### 6.8 admin/LoginButton component
 
-Returns JSX to display an [Auth0](https://auth0.com/) *Log in* button, and a *Cancel* button, when the current user is not logged in with Auth0. The *Log in* button initiates a call to Auth0 to request secure login. The *Cancel* button redirect the user to the front page of the application.
+Returns JSX to display an [Auth0](https://auth0.com/) *Log in* button, and a *Cancel* button. The *Log in* button initiates a call to Auth0 to request secure login. The *Cancel* button redirect the user to the front page of the application.
 
 When the current user is already logged in, this component does not render any JSX.
 
