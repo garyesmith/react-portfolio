@@ -59,9 +59,9 @@ Access to this route is protected by [Auth0](https://auth0.com/) authentication.
 
 **Restricting access**
 
-By default, Auth0 will permit anyone with a valid social media account to register and login to the site. Since this is intended to be a restricted admin panel, this behaviour is obviously not desired. You can refer to the extensive Auth0 documentation to consider various ways to restrict access, such as using an invite-only setup, or restricting signups using rules or actions.
+By default, Auth0 will permit anyone with a valid social media account to register and login to the applicaiton. Since this path is intended to be a restricted admin panel, this behaviour is not desired. You can refer to the extensive Auth0 documentation to consider various ways to restrict access, such as using an invite-only setup, or restricting signups using rules or actions.
 
-One quick way to restrict access to a small number of known email addresses is to create Rule inside the Auth0 control panel under *Auth Pipeline* > *Rules*, [as described here](https://auth0.com/rules/simple-user-whitelist). You may likely also want to create a *Force email verification* Rule for additional security. 
+One quick way to restrict access to a small number of known email addresses is to create *Rule* inside the Auth0 control panel under *Auth Pipeline* > *Rules*, [as described here](https://auth0.com/rules/simple-user-whitelist). You may likely also want to create a *Force email verification* Rule for additional security. 
 
 
 ## 5.0 Content customization
