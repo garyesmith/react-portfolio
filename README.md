@@ -149,7 +149,7 @@ For each project you must specify:
 
 ## 6.0 Implementation
 
-The site is implemented as a standard ReactJS application with seven functional components. The *App* component files are located in the document root; all the other component files are located within the `/components` subfolder.
+The site is implemented as a standard ReactJS application with nine functional components. The *App* component files are located in the document root; all the other component files are located within the `/components` subfolder.
 
 ### 6.1 App component
 
@@ -195,3 +195,18 @@ Returns JSX to display an summary box for a single project. The summary box outp
 ### 6.7 ProjectDetails component
 
 Returns JSX to display the full details of a single project, as defined in the `projects.json` configuration file. The *BrowserRouter* route defined in the *App* component displays this component under its own URL path, uniquely identifying it by the project's `tag` property. The component then outputs the `image`, `title`, and `body` of the project.
+
+### 6.8 admin/LoginButton component
+
+Returns JSX to display an Auth0 *Log in* button, and a *Cancel* button, when the current user is not logged in with Auth0. The *Log in* button initiates a call to Auth0 to request secure login. The *Cancel* button redirect the user to the front page of the application.
+
+When the current user is already logged in, this component does not render any JSX.
+
+
+### 6.9 admin/AdminContainer component
+
+Returns JSX to display placeholder text to indicate the the current user is successfully logged in. This component will be expanded in the future to provide functionality related to creating, editing and deleting Portfolio content.
+
+When the *Logout* button is clicked, a call to Auth0 is initiated to end the current session, and the user is redirected to the front page of the application.
+
+When the current user is not logged in, this component does not render any JSX.
