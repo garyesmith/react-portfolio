@@ -45,7 +45,7 @@ Access to this route is protected by [Auth0](https://auth0.com/) authentication.
 - Register a free account at [Auth0](https://auth0.com/).
 - Create an application: choose type *Single Page Web Application* and then *React*.
 - Under *Settings* for your application, copy/obtain the *Domain* and *Client ID* values for use below.
-- Enter your domain and/or server paths into the *Allowed Callback URLs*, *Allowed Logout URLs*, and *Allowed Web Origins* boxes. Comma-separate multiple domain paths as necessary. Be sure to include the */admin* route as one of the allowed callbacks.
+- Enter your Portfolio application's domain and/or server paths into the *Allowed Callback URLs*, *Allowed Logout URLs*, and *Allowed Web Origins* boxes. Comma-separate multiple domain paths as necessary. Be sure to include the */admin* route as one of the allowed callbacks. If you are also testing locally, you can add `http://localhost:3000` domain paths here as well.
 - Scroll to the bottom of the form and click the `Save Changes` button.
 
 **On your server:**
@@ -59,9 +59,9 @@ Access to this route is protected by [Auth0](https://auth0.com/) authentication.
 
 **Restricting access**
 
-By default, Auth0 will permit anyone with a valid social media account to login and register. Since this is restricted control panel, this is not desired. You can refer to the Auth0 documentation to consider various ways to restrict access, such as using an invite-only system, or restricting signups using rules or actions.
+By default, Auth0 will permit anyone with a valid social media account to register and login to the site. Since this is intended to be a restricted admin panel, this behaviour is obviously not desired. You can refer to the extensive Auth0 documentation to consider various ways to restrict access, such as using an invite-only setup, or restricting signups using rules or actions.
 
-One quick way to restrict access to a small number of known email addresses is to create aRules inside the Auth0 control panel under *Auth Pipeline* > *Rules*, [as described here](https://auth0.com/rules/simple-user-whitelist).
+One quick way to restrict access to a small number of known email addresses is to create Rule inside the Auth0 control panel under *Auth Pipeline* > *Rules*, [as described here](https://auth0.com/rules/simple-user-whitelist). You may likely also want to create a *Force email verification* Rule for additional security. 
 
 
 ## 5.0 Content customization
