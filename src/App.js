@@ -84,7 +84,7 @@ function App() {
           </Route>
         </Router>
       </Switch>
-      <Footer currYear={new Date().getFullYear()} footerText={config.footerText} showSourceCodeLink={config.showSourceCodeLink} />    
+      <Footer footerText={config.footerText} showSourceCodeLink={config.showSourceCodeLink} />    
     </>
   );
 }

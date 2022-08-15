@@ -14,20 +14,18 @@ const Footer = (props) => {
     return (
         <>
             <footer>
-                <p>&copy; <span id="copyright-year">{props.currYear}</span> {props.footerText}{sourceCodeLink}</p>
+                <p>&copy; <span id="copyright-year">{new Date().getFullYear()}</span> {props.footerText}{sourceCodeLink}</p>
             </footer>
         </>
     )
 }
 
 Footer.propTypes = {
-    currYear: PropTypes.number.isRequired,
     footerText: PropTypes.string.isRequired,
     showSourceCodeLink: PropTypes.bool.isRequired
 };
 
 Footer.defaultProps = {
-    currYear: 2022,
     footerText: "",
     showSourceCodeLink: true
 };
