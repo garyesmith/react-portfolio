@@ -8,6 +8,7 @@ import LoginButton from "./components/admin/LoginButton";
 import AdminContainer from "./components/admin/AdminContainer";
 import ProjectCategory from "./components/ProjectCategory";
 import ProjectDetails from "./components/ProjectDetails";
+import {getConfig, getAllProjects, getAllCategories} from "./api/simulatedApi";
 import './App.css';
 
 function App() {
@@ -16,38 +17,18 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [categories, setProjectCategories] = useState([]);
 
-  // read site configuration values from endpoint
+  // read values from placeholder "api" endpoints
   useEffect(() => {
-    fetch("./data/config.json").then((response) =>
-      response
-        .json()
-        .then((config) => {
-          setConfig(config);
-        })
-    );
+    getConfig().then((res) => {
+      setConfig(res);
+    });    
+    getAllProjects().then((res) => {
+      setProjects(res);
+    });
+    getAllCategories().then((res) => {
+      setProjectCategories(res);
+    });    
   }, []);
-
-  // read project categories from endpointn
-  useEffect(() => {
-    fetch("./data/categories.json").then((response) =>
-      response
-        .json()
-        .then((categories) => {
-          setProjectCategories(categories);
-        })
-    );
-  }, []);
-  
-  // read project details from endpoint
-  useEffect(() => {
-    fetch("./data/projects.json").then((response) =>
-      response
-        .json()
-        .then((projects) => {
-          setProjects(projects);
-        })
-    );
-  }, []); 
 
   let introduction="";
   if (config.siteIntroduction !== "") {
@@ -55,7 +36,7 @@ function App() {
                       <article>
                         <h3><Interweave content={config.siteIntroduction}></Interweave></h3>
                       </article>
-                    </section>;
+                   </section>;
   }
 
   const basename = document.querySelector('base')?.getAttribute('href') ?? '/' 
