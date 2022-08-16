@@ -8,8 +8,3 @@ test('Renders header element', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('Reads config.json', () => {
-  render(<Router><App /></Router>);
-  expect(config.siteName).toBeDefined();
-  expect(config.siteName).not.toMatch('');
-});

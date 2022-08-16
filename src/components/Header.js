@@ -7,7 +7,7 @@ import background from '../images/header-bg.jpg';
 const Header = (props) => {
     return (
         <>
-            <header style={{ backgroundImage: `url(${background})` }}>
+            <header data-testid="header-element" style={{ backgroundImage: `url(${background})` }}>
                 <article>
                 <h1><a href={process.env.PUBLIC_URL}><img id="logo" src={logo} alt="Logo" />{props.siteName}</a></h1>
                 <h2>{props.siteDescription}</h2>
@@ -23,8 +23,8 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-    siteName: "",
-    siteDescription: ""
+    siteName: "Default Site Name",
+    siteDescription: "A description of the site will display here."
 };
 
 export default React.memo(Header);
