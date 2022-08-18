@@ -26,8 +26,22 @@ With the above dependencies install, you can run this application on your local 
 
 Then visit `http://localhost:3000/demos/react-portfolio` in your browser (if it does not open automatically)
 
+## 3.0 Integrated Tests
 
-## 3.0 Production deployment
+The [Jest](https://jestjs.io/) Javascript Testing Framework has been used to create basic unit tests for most components in this application. Test cases are located in the files named with the convention `Component.test.js` in the `/src/components` folder, where `Component.js` defines the component to be tested.
+
+To run all test cases, execute the following command from within the project folder:
+
+`npm test`
+
+To run tests for a single component, specify the name of the component's test file, for example:
+
+`npm test Component.test.js`
+
+After execution, the results (with passed cases in green and failed cases in red) will be output to the console, along with explanations for any failures. When components are updated in ways that change their output, these test cases will likely need to be updated as well.
+
+
+## 4.0 Production deployment
 
 1. Edit `package.json` and set the `homepage` value to be the path where you will host the app inside your webserver docroot.
 2. Run `npm run build` on the command line from inside the project folder.
@@ -35,7 +49,7 @@ Then visit `http://localhost:3000/demos/react-portfolio` in your browser (if it 
 4. In a browser, open the URL that corresponds to the location where you have deployed the app.
 
 
-## 4.0 Auth0 configuration (optional)
+## 5.0 Auth0 configuration (optional)
 
 This application includes a placeholder administration route at `/admin`, intended to eventually house tools for creating, editing, and deleting content on the portfolio.
 
@@ -64,7 +78,7 @@ By default, Auth0 will permit anyone with a valid social media account to regist
 One quick way to restrict access to a small whitelist of trusted email addresses is to create *Rule* inside the Auth0 control panel under *Auth Pipeline* > *Rules*, [as described here](https://auth0.com/rules/simple-user-whitelist). You might also want to create a *Force email verification* rule for additional security. 
 
 
-## 5.0 Content customization
+## 6.0 Content customization
 
 The sample demo reads configuration values, categories and project details from static JSON files included with this repository. On a production site, it should be straightforward to change the fetch calls in `App.js` to instead read data from API endpoints that return JSON in the correct format.
 
@@ -77,7 +91,7 @@ Colors used for the navigation bar can be customized by assigning valid color va
 - **$navSelectedBackgroundColor** - The background color for the currently active navbar link.
 - **$navSelectedTextColor** - The text color for the currently actively navbar link.
 
-#### 5.1 Config data
+#### 6.1 Config data
 
 The file `/data/config.json` defines a single JSON object describing the overall configuration of the app, as in the following example:
 ```
@@ -97,7 +111,7 @@ The configuration object must specify:
 - An `footerText` string specifying text to display after the copyright year in the footer.
 - A `showSourceCodeLink` boolean value specifying whether to display a link to this GitHub repo in the footer.
 
-#### 5.2 Categories data
+#### 6.2 Categories data
 
 The file `/data/categories.json` defines an array of project category objects, with each category containing values defined as in the following example:
 
@@ -118,7 +132,7 @@ For each category you must specify:
 - A descriptive `name` string for the category, which will appear in the navbar and subheadings.
 - A URL-friendly `tag` that contains only lowercase alphanumeric characters and hyphens, which will appear in the URL hash.
 
-#### 5.3 Projects data
+#### 6.3 Projects data
 
 The file `/data/projects.json` defines an array of project details, with each project containing values defined as in the following example:
 
@@ -147,11 +161,11 @@ For each project you must specify:
 - A `navBackgroundColor` string that specifies the background color to use for navbar elements. This value should be a valid color definition in CSS, ex. `#4444aa` or `blue`.
 - A `body` string containing HTML that describes the project in detail.
 
-## 6.0 Implementation
+## 7.0 Implementation
 
 The site is implemented as a standard ReactJS application with nine functional components. The *App* component files are located in the document root; all the other component files are located within the `/components` subfolder.
 
-### 6.1 App component
+### 7.1 App component
 
 This component is at the top-level of the component hierarchy and is the parent of all other components in this app. It handles the following tasks:
 
@@ -161,26 +175,26 @@ This component is at the top-level of the component hierarchy and is the parent 
 
 - Depending on the route, this component returns JSX to initiate rendering of all children elements, including the header, navbar, body content, and footer.
 
-### 6.2 Footer component
+### 7.2 Footer component
 
 Returns JSX to display the footer, populating it with the current year, as well at the `footerText` value defined in `config.json`. 
 
 If the `showSourceCodeLink` in `config.json` is set to `true`, an HTML link to this repository is also included.
 
-### 6.3 Header component
+### 7.3 Header component
 
 Returns JSX to display the header, populating it with the `siteName` and `siteDescription` values defined in `config.json`.
 
-### 6.4 Navbar component
+### 7.4 Navbar component
 
 Returns JSX to display the site navigation bar, populating it with category names defined in `categories.json`.
 
-Note that this component uses SASS to easily allow the colors of the navbar to be customized (see section 4.0 above for details.)
+Note that this component uses SASS to easily allow the colors of the navbar to be customized (see section 6.0 above for details.)
 
 
 The navigation links render as URL hashes, and the component automatically scrolls the browser window to the selected subheading.
 
-### 6.5 ProjectCategory component
+### 7.5 ProjectCategory component
 
 Returns JSX to display any number of related project summary boxes beneath a category subheading.
 
@@ -188,22 +202,22 @@ The parent *App* component maps through the categories and outputs instances of 
 
 The `ProjectCategory` component outputs the correct category heading, and then loops to return instances of the `Project` component for all projects in that category.
 
-### 6.6 Project component
+### 7.6 Project component
 
 Returns JSX to display an summary box for a single project. The summary box outputs the project's `image`, `title` and `description` and links to the `ProjectDetails` component.
 
-### 6.7 ProjectDetails component
+### 7.7 ProjectDetails component
 
 Returns JSX to display the full details of a single project, as defined in the `projects.json` configuration file. The *BrowserRouter* route defined in the *App* component displays this component under its own URL path, uniquely identifying it by the project's `tag` property. The component then outputs the `image`, `title`, and `body` of the project.
 
-### 6.8 admin/LoginButton component
+### 7.8 admin/LoginButton component
 
 Returns JSX to display an [Auth0](https://auth0.com/) *Log in* button, and a *Cancel* button. The *Log in* button initiates a call to Auth0 to request secure login. The *Cancel* button redirect the user to the front page of the application.
 
 When the current user is already logged in, this component does not render any JSX.
 
 
-### 6.9 admin/AdminContainer component
+### 7.9 admin/AdminContainer component
 
 Returns JSX to display placeholder text to indicate the the current user is successfully logged in with [Auth0](https://auth0.com/). This component will be expanded in the future to provide functionality related to creating, editing and deleting Portfolio content.
 

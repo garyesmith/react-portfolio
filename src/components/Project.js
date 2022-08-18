@@ -15,10 +15,12 @@ const Project = (props) => {
         }
     });
 
+    const dynamicImage = require('../images/'+props.details.image);
+
     return (
         <li className="project">
             <Link to={linkPath}>
-                <img src={require('../images/'+props.details.image)} alt={props.details.title} />
+                <img src={dynamicImage} alt={props.details.title} />
                 <div className="project-meta">
                     <h3>{props.details.title}</h3>
                     <p><Interweave content={props.details.description} /></p>
@@ -54,7 +56,7 @@ Project.defaultProps = {
     }],
     details: {
         "id": "",
-        "title": "",
+        "title": "Default Project Title",
         "tag": "",
         "category": "",
         "image": "",
