@@ -1,9 +1,27 @@
-import React from "react";
+import React, {useEffect} from "react";
 import PropTypes from 'prop-types';
 import "./ProjectCategory.css";
 import Project from "./Project";
 
+const growInProjectBoxes = () => {
+    const projectElements = document.querySelectorAll(".project")
+    for (let i=0; i<projectElements.length; i++) {
+        if (!projectElements[i].classList.contains("animate-grow-in") && projectElements[i].getBoundingClientRect().top>=0 && projectElements[i].getBoundingClientRect().bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+            projectElements[i].classList.add("animate-grow-in");
+        }
+    }
+    if (projectElements.length === document.getElementsByClassName("animate-grow-in").length) {
+        window.removeEventListener("scroll", growInProjectBoxes);
+    }
+}
+
 const ProjectCategory = (props) => {
+
+    // some animation to "pop in" the the projects boxes when they scroll into view
+    useEffect(() => {
+        window.addEventListener("scroll", growInProjectBoxes);
+        growInProjectBoxes();
+    }, []);
 
     // loop to find and keep only the projects that match the requested category
     var categoryProjects=[];

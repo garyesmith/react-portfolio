@@ -11,7 +11,17 @@
     border: 1px solid #96a0ad;
     border-radius: 0;
     box-sizing: border-box;
+    transform: scale(0.95);
 }
+.category ul li.animate-grow-in {
+    animation: grow-in 1.0s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes grow-in {
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1.0); }
+}
+
 .category ul li.project a {
     text-decoration: none;
     cursor: pointer;
