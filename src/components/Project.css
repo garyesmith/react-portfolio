@@ -1,17 +1,18 @@
 /* Styles for Project component */
 .category ul li.project {
-    width: 31.3%;
-    height: 320px;
-    padding: 0;
-    background-color: white;
-    margin: 10px 2% 10px 0;
-    display: block;
-    position: relative;
-    float: left;
-    border: 1px solid #96a0ad;
+    background-color: white;    
     border-radius: 0;
     box-sizing: border-box;
     transform: scale(0.95);
+    box-shadow: 0 0 4px #96a0ad;
+    padding: 0;
+    width: 0;
+    min-width: 250px;
+    max-width: 320px;
+    min-height: 200px;
+    text-align: left;
+    flex: 0 1 20%;
+    flex-grow: 1; 
 }
 .category ul li.animate-grow-in {
     animation: grow-in 1.0s ease;
