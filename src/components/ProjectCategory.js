@@ -6,7 +6,7 @@ import Project from "./Project";
 const growInProjectBoxes = () => {
     const projectElements = document.querySelectorAll(".project")
     for (let i=0; i<projectElements.length; i++) {
-        if (!projectElements[i].classList.contains("animate-grow-in") && projectElements[i].getBoundingClientRect().top>=0 && projectElements[i].getBoundingClientRect().bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+        if (!projectElements[i].classList.contains("animate-grow-in") && projectElements[i].getBoundingClientRect().top>=0 && projectElements[i].getBoundingClientRect().bottom <= (window.innerHeight+200 || document.documentElement.clientHeight+200)) {
             projectElements[i].classList.add("animate-grow-in");
         }
     }
